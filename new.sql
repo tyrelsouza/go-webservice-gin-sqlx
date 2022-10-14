@@ -1,8 +1,5 @@
 CREATE TABLE `albums` (
                           `id` bigint NOT NULL AUTO_INCREMENT,
-                          `created_at` datetime(3) DEFAULT NULL,
-                          `updated_at` datetime(3) DEFAULT NULL,
-                          `deleted_at` datetime(3) DEFAULT NULL,
                           `title` longtext,
                           `artist` longtext,
                           `price` double DEFAULT NULL,
