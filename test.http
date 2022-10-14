@@ -1,28 +1,16 @@
 GET http://localhost:8123/albums/4
 Content-Type: application/json
 
-<> 2022-10-14T140510.200.json
-<> 2022-10-14T123741.200.json
-<> 2022-10-14T123737.200.json
-
 ###
-
-
 GET http://localhost:8123/albums
 Content-Type: application/json
 
-<> 2022-10-14T140525.200.json
-<> 2022-10-14T123704.200.json
-<> 2022-10-14T123659.200.json
-<> 2022-10-14T123235.200.json
 
 ###
 POST http://localhost:8123/albums
 Content-Type: application/json
 
 {"title":  "Mark Tom and Travis Show", "artist": "Blink-182", "price": "18.99"}
-<> 2022-10-14T123203.200.json
-<> 2022-10-14T123049.400.json
 
 ###
 POST http://localhost:8123/albums
