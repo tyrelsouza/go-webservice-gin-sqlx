@@ -29,3 +29,10 @@ POST http://localhost:8080/albums
 Content-Type: application/json
 
 {"title": "Sarah Vaughan and Clifford Brown", "artist": "Sarah Vaughan", "price": 39.99}
+
+
+###
+POST http://localhost:8080/albums
+Content-Type: application/json
+
+{"title": "2Pacalypse", "artist": "2pac", "price": 75.23}

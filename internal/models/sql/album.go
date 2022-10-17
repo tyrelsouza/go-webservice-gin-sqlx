@@ -3,6 +3,7 @@ package sql
 import (
 	"database/sql"
 	"github.com/jmoiron/sqlx"
+	"strconv"
 	"web-service-gin/internal/forms"
 	models2 "web-service-gin/internal/models"
 )
@@ -37,24 +38,28 @@ func NewAlbumService(conn *sqlx.DB) (*AlbumService, error) {
 
 // Create will try to add the album to the DB.
 func (s *AlbumService) Create(form *forms.CreateAlbum) (*models2.Album, error) {
-	q := `
-INSERT INTO albums(title, artist, price)
-VALUES (?, ?, ?)
-RETURNING *;`
+	q := `INSERT INTO albums(title, artist, price) VALUES (?, ?, ?);`
 
-	var output models2.Album
-	err := s.conn.Get(
-		&output,
+	result, err := s.conn.Exec(
 		q,
 		*form.Title,
 		*form.Artist,
 		*form.Price,
 	)
-
 	if err != nil {
 		return nil, err
 	}
-	return &output, nil
+
+	id, err := result.LastInsertId()
+	if err != nil {
+		return nil, err
+	}
+
+	album, err := s.GetByID(strconv.FormatUint(uint64(id), 10))
+	if err != nil {
+		return nil, err
+	}
+	return album, nil
 }
 
 // Update will replace the values of the give album with those provided.

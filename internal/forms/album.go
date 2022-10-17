@@ -1,7 +1,7 @@
 package forms
 
 type CreateAlbum struct {
-	ID     *int64   `form:"id" json:"id" binding:"required"`
+	ID     *int64   `form:"id" json:"id"`
 	Title  *string  `form:"title" json:"title" binding:"required"`
 	Artist *string  `form:"artist" json:"artist" binding:"required"`
 	Price  *float64 `form:"price" json:"price" binding:"required"`

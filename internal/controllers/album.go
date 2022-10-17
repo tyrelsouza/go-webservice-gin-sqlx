@@ -2,7 +2,6 @@ package controllers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/gin-gonic/gin/binding"
 	"net/http"
 	"web-service-gin/internal/forms"
 	models2 "web-service-gin/internal/models"
@@ -24,7 +23,7 @@ func NewAlbum(albumService models2.AlbumService) *Album {
 // Post will create a new album from the given data, if the form is valid.
 func (p *Album) Post(c *gin.Context) {
 	var form forms.CreateAlbum
-	if c.ShouldBindWith(&form, binding.JSON) != nil {
+	if c.ShouldBindJSON(&form) != nil {
 		// TODO: Give a better error message.
 		c.JSON(
 			http.StatusNotAcceptable,
@@ -58,7 +57,7 @@ func (p *Album) Post(c *gin.Context) {
 // Put will perform an update of a album.
 func (p *Album) Put(c *gin.Context) {
 	var form forms.CreateAlbum
-	if err := c.ShouldBindWith(&form, binding.JSON); err != nil {
+	if err := c.ShouldBindJSON(&form); err != nil {
 		// TODO: Give a better error message.
 		c.JSON(
 			http.StatusNotAcceptable,
