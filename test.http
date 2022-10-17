@@ -1,31 +1,31 @@
-GET http://localhost:8123/albums/4
+GET http://localhost:8080/albums/4
 Content-Type: application/json
 
 ###
-GET http://localhost:8123/albums
+GET http://localhost:8080/albums
 Content-Type: application/json
 
 
 ###
-POST http://localhost:8123/albums
+POST http://localhost:8080/albums
 Content-Type: application/json
 
 {"title":  "Mark Tom and Travis Show", "artist": "Blink-182", "price": "18.99"}
 
 ###
-POST http://localhost:8123/albums
+POST http://localhost:8080/albums
 Content-Type: application/json
 
 {"title": "Blue Train", "artist": "John Coltrane", "price": 56.99}
 
 ###
-POST http://localhost:8123/albums
+POST http://localhost:8080/albums
 Content-Type: application/json
 
 {"title": "Jeru", "artist": "Gerry Mulligan", "price": 56.99}
 
 ###
-POST http://localhost:8123/albums
+POST http://localhost:8080/albums
 Content-Type: application/json
 
 {"title": "Sarah Vaughan and Clifford Brown", "artist": "Sarah Vaughan", "price": 39.99}
